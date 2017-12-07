@@ -8,7 +8,7 @@ import { AuthService } from '../services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
   constructor(private auth: AuthService) { }
 
@@ -19,5 +19,6 @@ export class LoginComponent implements OnInit {
   logout() {
     this.auth.logout().subscribe();
   }
+
 
 }
