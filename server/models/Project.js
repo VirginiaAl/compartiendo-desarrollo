@@ -6,10 +6,11 @@ const projectSchema = new Schema({
   association: String,
   title: String,
   description: String,
-  location: Number,
+  location: { type: { type: String }, coordinates: [Number] },
   financing: String,
   benificiaries: String,
   link: String,
+  imgURL: String,
   category: {
     type: String,
     enum: [
