@@ -10,7 +10,8 @@ router.post('/', (req, res, next) => {
     association: req.body.association,
     title: req.body.title,
     description: req.body.description,
-    location: req.body.location,
+    lat: req.body.lat,
+    lng: req.body.lng,
     financing: req.body.financing,
     benificiaries: req.body.benificiaries,
     link: req.body.link
@@ -39,7 +40,8 @@ router.post('/:id', (req, res, next) => {
     association: req.body.association,
     title: req.body.title,
     description: req.body.description,
-    location: req.body.location,
+    lat: req.body.lat,
+    lng: req.body.lng,
     financing: req.body.financing,
     benificiaries: req.body.benificiaries,
     link: req.body.link
@@ -55,7 +57,7 @@ router.post('/:id', (req, res, next) => {
 router.post('/:id/delete', (req, res, next) => {
   const id = req.params.id;
 
-  Product.findByIdAndRemove(id)
+  Project.findByIdAndRemove(id)
     .then(projects => res.status(200).json(projects))
     .catch(err => res.status(500).json(err))
 

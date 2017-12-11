@@ -1,3 +1,16 @@
-<p>
-  projects-list works!
-</p>
+<div>
+<button class="btn btn-secondary" type="button" (click)="goToHome()">Home</button>
+</div>
+
+
+
+<h1> Projects list </h1>
+<div class="card-columns container">
+  <div *ngFor="let project of projects" class="card">
+      <h4 class="card-title">{{ project.association }}</h4>
+      <p class="card-text">{{ project.title }}</p>
+      <p class="card-text">{{ project.description }}</p>
+
+        <h1 class="card-text">{{ project.financing }}</h1>
+
+    </div>

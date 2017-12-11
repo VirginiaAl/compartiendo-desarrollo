@@ -1,32 +1,36 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Response } from '@angular/http';
 import {Observable} from 'rxjs';
 import 'rxjs/add/operator/map';
 
 
 @Injectable()
 export class ProjectsService {
+  options:object = {
+    withCredentials:true
+  }
+
 
   BASE_URL: string = 'http://localhost:3000';
   constructor(private http: Http) { }
 
   getProjectList(): Observable<any> {
-    return this.http.get('${this.BASE_URL}/project')
+    return this.http.get(`${this.BASE_URL}/project`, this.options)
       .map((res) => res.json());
   }
 
   getProjectByID(id): Observable<any> {
-    return this.http.get('${this.BASE_URL}/project/${id}')
+    return this.http.get(`${this.BASE_URL}/project/${id}`, this.options)
       .map((res) => res.json());
   }
 
   editProject(projects): Observable<any> {
-    return this.http.put('${this.BASE_URL}/project/${project.id}', projects)
+    return this.http.put(`${this.BASE_URL}/project/${projects.id}`, projects, this.options)
       .map((res) => res.json());
   }
 
   deleteProject(id) {
-    return this.http.delete("${this.BASE_URL}/project/${id}")
+    return this.http.delete(`${this.BASE_URL}/project/${id}`, this.options)
       .map((res) => res.json());
   }
 

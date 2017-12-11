@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectsService } from '../services/projects.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-project',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectComponent implements OnInit {
 
-  constructor() { }
+  projects:Array<any> = [];
+
+  constructor(public projectsService:ProjectsService, private router: Router) { }
 
   ngOnInit() {
+
+    
   }
+  goToHome() {
+      this.router.navigate(['/home']);
+    }
 
 }

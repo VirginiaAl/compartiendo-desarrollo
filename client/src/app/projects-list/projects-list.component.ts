@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectsService } from '../services/projects.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-projects-list',
@@ -10,12 +12,16 @@ export class ProjectsListComponent implements OnInit {
 
 projects:Array<any> = [];
 
-  constructor(public projectsService:ProjectsService) { }
+  constructor(public projectsService:ProjectsService, private router: Router) { }
 
   ngOnInit() {
     this.projectsService.getProjectList().subscribe( list =>{
       this.projects = list;
     });
+
   }
+  goToHome() {
+      this.router.navigate(['/home']);  
+    }
 
 }

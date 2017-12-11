@@ -11,7 +11,9 @@ import { ProjectsService } from '../services/projects.service';
 })
 export class HomeComponent {
 
-  constructor(private auth: AuthService) { }
+  projects:Array<any> = [];
+
+  constructor(private auth: AuthService, public projectsService:ProjectsService) { }
 
   login(username, password){
     this.auth.login(username, password).subscribe();
@@ -20,6 +22,10 @@ export class HomeComponent {
   logout() {
     this.auth.logout().subscribe();
   }
-
+  getProjectList() {
+    this.projectsService.getProjectList()
+    .map( list => this.projects = list)
+    .subscribe()
+}
 
 }

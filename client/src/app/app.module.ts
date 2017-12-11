@@ -3,6 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes} from "@angular/router";
+import { AgmCoreModule } from '@agm/core';
+
 
 import { AuthService } from "./services/auth.service";
 import { ProjectsService } from './services/projects.service';
@@ -13,11 +15,13 @@ import { UserComponent } from './user/user.component';
 import { ProjectComponent } from './project/project.component';
 import { ProjectsListComponent } from './projects-list/projects-list.component';
 
+
 const routes: Routes = [
-  //{ path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'about', component: HomeComponent },
-  { path: 'about', component: UserComponent },
-  { path: 'about', component: ProjectComponent }
+  //{ path: '**', redirectTo: '' },
+  { path: 'home', component: HomeComponent },
+  { path: 'user', component: UserComponent },
+  { path: 'project', component: ProjectComponent },
+  { path: 'projects', component: ProjectsListComponent }
 ];
 
 
@@ -27,13 +31,17 @@ const routes: Routes = [
     HomeComponent,
     UserComponent,
     ProjectComponent,
-    ProjectsListComponent
+    ProjectsListComponent,
+    
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyB7W0HY5n39NygEXomWtZNtHOXR9QAtqCU'
+    })
   ],
   providers: [AuthService, ProjectsService],
   bootstrap: [AppComponent]

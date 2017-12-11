@@ -1,3 +1,16 @@
-<p>
-  project works!
-</p>
+<div>
+<button class="btn btn-secondary" type="button" (click)="goToHome()">Home</button>
+</div>
+
+
+
+<h1> Project </h1>
+<div class="card-columns container">
+  <!-- <div *ngFor="let project of projects" class="card"> -->
+      <h4 class="card-title">ASSOCIATION /ONG: {{ project.association }}</h4>
+      <p class="card-text">PROJECT TITLE: {{ project.title }}</p>
+      <p class="card-text">DESCRIPTION: {{ project.description }}</p>
+
+        <h1 class="card-text">FINANCING: {{ project.financing }}</h1>
+
+    </div>
