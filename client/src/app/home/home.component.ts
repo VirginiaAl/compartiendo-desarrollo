@@ -9,11 +9,17 @@ import { ProjectsService } from '../services/projects.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
   projects:Array<any> = [];
-
+  
   constructor(private auth: AuthService, public projectsService:ProjectsService) { }
+
+  ngOnInit() {
+    this.projectsService.getProjectList()
+    .map( list => this.projects = list)
+    .subscribe()
+  }
 
   login(username, password){
     this.auth.login(username, password).subscribe();
@@ -22,10 +28,5 @@ export class HomeComponent {
   logout() {
     this.auth.logout().subscribe();
   }
-  getProjectList() {
-    this.projectsService.getProjectList()
-    .map( list => this.projects = list)
-    .subscribe()
-}
 
 }

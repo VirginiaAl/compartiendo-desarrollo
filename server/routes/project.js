@@ -23,6 +23,12 @@ router.post('/', (req, res, next) => {
     .catch(err => res.status(500).json(err));
 });
 
+router.get('/:id', (req, res, next) => {
+  console.log('ENTRA')
+  Project.findById(req.params.id)
+    .then(project => res.status(200).json(project))
+    .catch(err => res.status(500).json(err))
+});
 
 //list
 router.get('/', (req, res, next) => {
@@ -30,6 +36,8 @@ router.get('/', (req, res, next) => {
     .then(projects => res.status(200).json(projects))
     .catch(err => res.status(500).json(err))
 });
+
+
 
 //update
 router.post('/:id', (req, res, next) => {

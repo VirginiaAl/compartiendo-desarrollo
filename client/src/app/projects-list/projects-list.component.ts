@@ -17,11 +17,12 @@ projects:Array<any> = [];
   ngOnInit() {
     this.projectsService.getProjectList().subscribe( list =>{
       this.projects = list;
+      console.log(this.projects)
     });
 
   }
   goToHome() {
-      this.router.navigate(['/home']);  
+      this.router.navigate(['/home']);
     }
 
 }

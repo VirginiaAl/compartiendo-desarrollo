@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectsService } from '../services/projects.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-project',
@@ -9,16 +9,35 @@ import { Router } from '@angular/router';
 })
 export class ProjectComponent implements OnInit {
 
-  projects:Array<any> = [];
+  project;
 
-  constructor(public projectsService:ProjectsService, private router: Router) { }
+  constructor(public projectsService: ProjectsService,
+    private router: ActivatedRoute,
+    private route: Router) { }
 
   ngOnInit() {
+    this.router.params.subscribe(params => {
+      this.projectsService.getProjectByID(params['id'])
+        .map(project => this.project = project)
+        .subscribe()
 
-    
+    })
+
   }
+
+
+
+
+  // getProjectDetails(id) {
+  //   this.projectsService.get(id)
+  //     .subscribe((project) => {
+  //       this.projects = project;
+  //     });
+  // }
+
+
   goToHome() {
-      this.router.navigate(['/home']);
+      this.route.navigate(['/home']);
     }
 
 }

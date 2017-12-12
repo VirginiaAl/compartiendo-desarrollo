@@ -20,7 +20,7 @@ const routes: Routes = [
   //{ path: '**', redirectTo: '' },
   { path: 'home', component: HomeComponent },
   { path: 'user', component: UserComponent },
-  { path: 'project', component: ProjectComponent },
+  { path: 'project/:id', component: ProjectComponent },
   { path: 'projects', component: ProjectsListComponent }
 ];
 
@@ -32,7 +32,7 @@ const routes: Routes = [
     UserComponent,
     ProjectComponent,
     ProjectsListComponent,
-    
+
   ],
   imports: [
     BrowserModule,

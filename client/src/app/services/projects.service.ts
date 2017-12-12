@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import 'rxjs/add/operator/map';
 
 
+
 @Injectable()
 export class ProjectsService {
   options:object = {
@@ -23,6 +24,7 @@ export class ProjectsService {
     return this.http.get(`${this.BASE_URL}/project/${id}`, this.options)
       .map((res) => res.json());
   }
+
 
   editProject(projects): Observable<any> {
     return this.http.put(`${this.BASE_URL}/project/${projects.id}`, projects, this.options)
