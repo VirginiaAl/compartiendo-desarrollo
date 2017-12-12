@@ -21,7 +21,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'user', component: UserComponent },
   { path: 'project/:id', component: ProjectComponent },
-  { path: 'projects', component: ProjectsListComponent }
+  { path: 'projects', component: ProjectsListComponent },
+  { path: 'projects/:category', component: ProjectsListComponent }
 ];
 
 

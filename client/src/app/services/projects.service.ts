@@ -25,6 +25,10 @@ export class ProjectsService {
       .map((res) => res.json());
   }
 
+  findBycategory(category): Observable<any> {
+    return this.http.get(`${this.BASE_URL}/project/cat/${category}`, this.options)
+      .map((res) => res.json());
+}
 
   editProject(projects): Observable<any> {
     return this.http.put(`${this.BASE_URL}/project/${projects.id}`, projects, this.options)

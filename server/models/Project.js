@@ -16,7 +16,7 @@ const projectSchema = new Schema({
     type: String,
     enum: [
       'cooperation',
-      'social action',
+      'social-action',
       'education'
     ],
 

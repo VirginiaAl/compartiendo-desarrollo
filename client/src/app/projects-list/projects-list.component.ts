@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectsService } from '../services/projects.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -12,17 +12,35 @@ export class ProjectsListComponent implements OnInit {
 
 projects:Array<any> = [];
 
-  constructor(public projectsService:ProjectsService, private router: Router) { }
+  constructor(public projectsService:ProjectsService,
+    private route: Router,
+   private router: ActivatedRoute,
+) { }
 
   ngOnInit() {
-    this.projectsService.getProjectList().subscribe( list =>{
-      this.projects = list;
-      console.log(this.projects)
-    });
+    // this.projectsService.getProjectList().subscribe( list =>{
+    //   this.projects = list;
+    //   console.log(this.projects)
+    // });
 
-  }
+    this.router.params.subscribe(params => {
+      if(params){
+      this.projectsService.findBycategory(params['category'])
+        .map(projects => this.projects = projects)
+        .subscribe()
+      }
+      else{
+        this.projectsService.getProjectList()
+        .map( list => this.projects = list)
+        .subscribe()
+      }
+
+    })
+
+}
+
   goToHome() {
-      this.router.navigate(['/home']);
+      this.route.navigate(['/home']);
     }
 
 }

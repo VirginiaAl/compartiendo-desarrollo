@@ -40,7 +40,7 @@ category: "cooperation"
   benificiaries: "Población de Municipio de la Ganda, Comuna de Babaera, Aldea de Tchakuma",
   link: "https://pt-br.facebook.com/Organiza%C3%A7%C3%A3o-Humanit%C3%A1ria-Internacional-792381324146403/",
   imgURL:"",
-  category: "social action"
+  category: "social-action"
 
 },
 

@@ -23,17 +23,9 @@ export class ProjectComponent implements OnInit {
 
     })
 
+
+
   }
-
-
-
-
-  // getProjectDetails(id) {
-  //   this.projectsService.get(id)
-  //     .subscribe((project) => {
-  //       this.projects = project;
-  //     });
-  // }
 
 
   goToHome() {

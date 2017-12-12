@@ -24,8 +24,15 @@ router.post('/', (req, res, next) => {
 });
 
 router.get('/:id', (req, res, next) => {
-  console.log('ENTRA')
+  console.log('ENTRA');
   Project.findById(req.params.id)
+    .then(project => res.status(200).json(project))
+    .catch(err => res.status(500).json(err))
+});
+
+router.get('/cat/:category', (req, res, next) => {
+  console.log('ENTRA BIEN');
+  Project.findBycategory(req.params.category)
     .then(project => res.status(200).json(project))
     .catch(err => res.status(500).json(err))
 });
