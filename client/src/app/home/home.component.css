@@ -1,4 +1,23 @@
+.navbar{
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
+.container{
+  /*background: red;*/
+  width: 50%;
+  padding: 2%;
+  font-family: 'Courgette', cursive;
+}
+h1{
+  padding-top: 80px;
+}
+/*map*/
+.mapa{
+  width: 80%;
+  margin: 50px auto;
+
+}
 agm-map {
-  height: 300px;
-  width: 1000px;
+  height: 800px;
 }

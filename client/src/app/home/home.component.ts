@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { ProjectsService } from '../services/projects.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 
@@ -13,7 +14,10 @@ export class HomeComponent implements OnInit {
 
   projects:Array<any> = [];
 
-  constructor(private auth: AuthService, public projectsService:ProjectsService) { }
+  constructor(private auth: AuthService,
+    public projectsService:ProjectsService,
+    private route: Router,
+    private router: ActivatedRoute) { }
 
   ngOnInit() {
     this.projectsService.getProjectList()
@@ -21,10 +25,16 @@ export class HomeComponent implements OnInit {
     .subscribe()
   }
 
-  login(username, password){
-    this.auth.login(username, password).subscribe();
+  signup(username, password){
+  this.auth.signup(username, password).subscribe();
+  this.route.navigate(['/user']);
   }
 
-  
+  login(username, password){
+    this.auth.login(username, password).subscribe();
+    this.route.navigate(['/user']);
+  }
+
+
 
 }

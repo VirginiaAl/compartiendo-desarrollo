@@ -1,6 +1,35 @@
+<!-- <button type="button" class="btn btn-lg btn-pill btn-success" [routerLink]="['/projects/cat', 'cooperation']">Cooperation Projects</button>
+<button type="button" class="btn btn-lg btn-pill btn-success" [routerLink]="['/projects/cat', 'social-action']">Social Action Projects</button>
+<button type="button" class="btn btn-lg btn-pill btn-success" [routerLink]="['/projects/cat', 'education']">Education Projects</button> -->
+<!-- nav bar -->
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/projects/cat', 'cooperation']">Cooperation Projects <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/projects/cat', 'social-action']">Social Action Projects</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/projects/cat', 'education']">Education Projects</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
 <h1> COMPARTIENDO DESARROLLO </h1>
 
-<div *ngIf="!auth.user">
+<!-- <div *ngIf="!auth.user">
   <form>
     <label> Username </label>
     <input type="text" [(ngModel)]="username" name="username"/>
@@ -13,17 +42,37 @@
   </form>
   <p class="error"> {{ error }} </p>
 </div>
+ -->
 
+<!-- formulario login/signup -->
 
+<div class="container" *ngIf="!auth.user">
+  <h2> Login or signup </h2>
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Username</label>
+      <input type="text" [(ngModel)]="username" name="username" class="form-control" placeholder="Username">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" [(ngModel)]="password" name="password" class="form-control" placeholder="Password">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" [(ngModel)]="email" name="email" class="form-control" placeholder="Enter email">
+    </div>
+    <button type="submit" (click)="login(username,password)" class="btn btn-primary">Login</button>
+    <button type="submit" (click)="signup()" class="btn btn-primary">Login</button>
 
-<div class="card">
-    <agm-map [latitude]="1.684034" [longitude]="23.023188" [zoom]="2">
+  </form>
+</div>
+
+<div class="mapa">
+  <h2> Map </h2>
+    <agm-map [latitude]="1.684034" [longitude]="23.023188" [zoom]="4">
     <agm-marker *ngFor="let project of projects" [latitude]="project.lat" [longitude]="project.lng">
       <agm-info-window>{{project.title}}</agm-info-window>
     </agm-marker>
   </agm-map>
 </div>
-
-<button type="button" class="btn btn-lg btn-pill btn-success" [routerLink]="['/projects/cat', 'cooperation']">Cooperation Projects</button>
-<button type="button" class="btn btn-lg btn-pill btn-success" [routerLink]="['/projects/cat', 'social-action']">Social Action Projects</button>
-<button type="button" class="btn btn-lg btn-pill btn-success" [routerLink]="['/projects/cat', 'education']">Education Projects</button>

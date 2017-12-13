@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import {ChatService} from '../services/chat.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -9,7 +10,9 @@ import {ChatService} from '../services/chat.service';
 })
 export class UserComponent implements OnInit {
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService,
+    private route: Router,
+    private router: ActivatedRoute) { }
 
   ngOnInit() {
 
@@ -17,6 +20,7 @@ export class UserComponent implements OnInit {
 
 logout() {
   this.auth.logout().subscribe();
+  this.route.navigate(['/home']);
 }
 
 }
