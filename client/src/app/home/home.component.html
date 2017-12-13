@@ -14,14 +14,13 @@
   <p class="error"> {{ error }} </p>
 </div>
 
-<div *ngIf="auth.user">
-  <h2>Welcome {{auth.user.username}}</h2>
-  <a href="#" (click)="logout()">Logout {{auth.user.username}}</a>
-</div>
+
 
 <div class="card">
-  <agm-map>
-    <agm-marker *ngFor="let project of projects" [latitude]="project.lat" [longitude]="project.lng"></agm-marker>
+    <agm-map [latitude]="1.684034" [longitude]="23.023188" [zoom]="2">
+    <agm-marker *ngFor="let project of projects" [latitude]="project.lat" [longitude]="project.lng">
+      <agm-info-window>{{project.title}}</agm-info-window>
+    </agm-marker>
   </agm-map>
 </div>
 
