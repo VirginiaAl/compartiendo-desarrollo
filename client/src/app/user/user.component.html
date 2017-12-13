@@ -1,3 +1,15 @@
 <p>
-  user works!
+  chat works!
 </p>
+
+
+<div *ngIf="auth.user">
+  <h2>Welcome {{auth.user.username}}</h2>
+  <a href="#" (click)="logout()">Logout {{auth.user.username}}</a>
+</div>
+
+<!-- <ul>
+  <li *ngFor="let m of chat.messages"><b>{{m.username}}</b>: {{m.message}}</li>
+</ul>
+<input type="text" [(ngModel)]="m">
+<button (click)="chat.sendMessage(m); m=''"> Send Message </button> -->

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectsService } from '../services/projects.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
@@ -22,14 +23,23 @@ export class ProjectComponent implements OnInit {
         .subscribe()
 
     })
+  }
 
+  editProject(projectId){
+    this.projectsService.editProject(projectId)
+      .map(project => this.project = project)
+      .subscribe()
 
-
+  }
+  deleteProject(projectId){
+    this.projectsService.deleteProject(projectId)
+      .map(project => this.project = project)
+      .subscribe()
   }
 
 
   goToHome() {
-      this.route.navigate(['/home']);
-    }
+    this.route.navigate(['/home']);
+  }
 
 }

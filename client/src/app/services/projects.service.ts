@@ -25,7 +25,7 @@ export class ProjectsService {
       .map((res) => res.json());
   }
 
-  findBycategory(category): Observable<any> {
+  findByCategory(category): Observable<any> {
     return this.http.get(`${this.BASE_URL}/project/cat/${category}`, this.options)
       .map((res) => res.json());
 }

@@ -8,6 +8,8 @@ import { AgmCoreModule } from '@agm/core';
 
 import { AuthService } from "./services/auth.service";
 import { ProjectsService } from './services/projects.service';
+import { ChatService } from './services/chat.service';
+
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -22,7 +24,7 @@ const routes: Routes = [
   { path: 'user', component: UserComponent },
   { path: 'project/:id', component: ProjectComponent },
   { path: 'projects', component: ProjectsListComponent },
-  { path: 'projects/:category', component: ProjectsListComponent }
+  { path: 'projects/cat/:category', component: ProjectsListComponent }
 ];
 
 

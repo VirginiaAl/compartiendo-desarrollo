@@ -12,7 +12,7 @@ import { ProjectsService } from '../services/projects.service';
 export class HomeComponent implements OnInit {
 
   projects:Array<any> = [];
-  
+
   constructor(private auth: AuthService, public projectsService:ProjectsService) { }
 
   ngOnInit() {
@@ -25,8 +25,6 @@ export class HomeComponent implements OnInit {
     this.auth.login(username, password).subscribe();
   }
 
-  logout() {
-    this.auth.logout().subscribe();
-  }
+  
 
 }

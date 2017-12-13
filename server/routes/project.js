@@ -32,7 +32,7 @@ router.get('/:id', (req, res, next) => {
 
 router.get('/cat/:category', (req, res, next) => {
   console.log('ENTRA BIEN');
-  Project.findBycategory(req.params.category)
+  Project.find({category:req.params.category})
     .then(project => res.status(200).json(project))
     .catch(err => res.status(500).json(err))
 });

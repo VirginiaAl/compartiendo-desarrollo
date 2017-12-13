@@ -2,7 +2,6 @@
 
 <div *ngIf="!auth.user">
   <form>
-    <h2> Login or Signup </h2>
     <label> Username </label>
     <input type="text" [(ngModel)]="username" name="username"/>
     <br>
@@ -26,6 +25,6 @@
   </agm-map>
 </div>
 
-<button type="button" class="btn btn-lg btn-pill btn-success" [routerLink]="['/projects', 'cooperation']">Cooperation Projects</button>
-<button type="button" class="btn btn-lg btn-pill btn-success" [routerLink]="['/projects', 'social-action']">Social Action Projects</button>
-<button type="button" class="btn btn-lg btn-pill btn-success" [routerLink]="['/projects', 'education']">Education Projects</button>
+<button type="button" class="btn btn-lg btn-pill btn-success" [routerLink]="['/projects/cat', 'cooperation']">Cooperation Projects</button>
+<button type="button" class="btn btn-lg btn-pill btn-success" [routerLink]="['/projects/cat', 'social-action']">Social Action Projects</button>
+<button type="button" class="btn btn-lg btn-pill btn-success" [routerLink]="['/projects/cat', 'education']">Education Projects</button>
