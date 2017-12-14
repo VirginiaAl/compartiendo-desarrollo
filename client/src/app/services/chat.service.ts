@@ -1,6 +1,8 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import * as io from 'socket.io-client';
-const BASE_DOMAIN = 'http://localhost:3000';
+import { environment } from '../../environments/environment';
+
+const BASE_DOMAIN = environment.BASE_URL;
 
 interface Message{
   message:string;

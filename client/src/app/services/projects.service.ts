@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
-
+import { environment } from '../../environments/environment';
 
 
 @Injectable()
@@ -12,7 +12,7 @@ export class ProjectsService {
   }
 
 
-  BASE_URL: string = 'http://localhost:3000';
+  BASE_URL: string = environment.BASE_URL;
   constructor(private http: Http) { }
 
   getProjectList(): Observable<any> {
