@@ -16,15 +16,19 @@ import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 import { ProjectComponent } from './project/project.component';
 import { ProjectsListComponent } from './projects-list/projects-list.component';
+import { NewProjectComponent } from './new-project/new-project.component';
+import { EditProjectComponent } from './edit-project/edit-project.component';
 
 
 const routes: Routes = [
-  //{ path: '**', redirectTo: '' },
   { path: 'home', component: HomeComponent },
   { path: 'user', component: UserComponent },
+  { path: 'project/new', component: NewProjectComponent },
+  { path: 'project/edit', component: EditProjectComponent },
   { path: 'project/:id', component: ProjectComponent },
   { path: 'projects', component: ProjectsListComponent },
-  { path: 'projects/cat/:category', component: ProjectsListComponent }
+  { path: 'projects/cat/:category', component: ProjectsListComponent },
+  { path: '**', redirectTo: 'home' }
 ];
 
 
@@ -35,6 +39,8 @@ const routes: Routes = [
     UserComponent,
     ProjectComponent,
     ProjectsListComponent,
+    NewProjectComponent,
+    EditProjectComponent,
 
   ],
   imports: [

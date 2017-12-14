@@ -1,20 +1,23 @@
-<div>
-  <button class="btn btn-secondary" type="button" (click)="goToHome()">Home</button>
-</div>
+
+  <button class="btn btn-secondary" type="button" [routerLink]="['/projects']">BacktoProjects</button>
+
 
 
 
 <h1> Project </h1>
-<div class="card-columns container">
+<div class="col-xs-1 col-sm-12">
   <div *ngIf="project" class="card">
     <h4 class="card-title">ASSOCIATION /ONG: {{ project.association }}</h4>
     <p class="card-text">PROJECT TITLE: {{ project.title }}</p>
     <p class="card-text">DESCRIPTION: {{ project.description }}</p>
-    <h1 class="card-text">FINANCING: {{ project.financing }}</h1>
-
+    <p class="card-text">BENEFICIARIES: {{ project.benificiaries }}</p>
+    <p class="card-text">LINK: {{ project.link }}</p>
+    <p class="card-text">FINANCING: {{ project.financing }}</p>
+    <img [src]="project.imgURL" alt="img">
+</div>
 
     <button class="btn btn-secondary" type="button" (click)="editProject(project._id)">edit</button>
     <button class="btn btn-secondary" type="button" (click)="deleteProject(project._id)">delete</button>
-</div>
+
 
 </div>

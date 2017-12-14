@@ -1,0 +1,31 @@
+<div class="container">
+  <h2> NUEVO PROYECTO </h2>
+  <form  #myForm="ngForm">
+    <div class="form-group">
+      <label>Asociación: </label>
+      <input type="text" [(ngModel)]="association" name="association" class="form-control" placeholder="Nombre de la asociación">
+    </div>
+    <div class="form-group">
+      <label>Título: </label>
+      <input type="text" [(ngModel)]="title" name="title" class="form-control" placeholder="Título del proyecto">
+    </div>
+    <div class="form-group">
+      <label>Descripción: </label>
+      <input type="text" [(ngModel)]="description" name="description" class="form-control" placeholder="Descripción del proyecto">
+    </div>
+    <div class="form-group">
+      <label>Beneficiarios: </label>
+      <input type="text" [(ngModel)]="beneficiaires" name="beneficiaires" class="form-control" placeholder="Beneficiarios del proyecto">
+    </div>
+    <div class="form-group">
+      <label>Link: </label>
+      <input type="text" [(ngModel)]="url" name="url" class="form-control" placeholder="URL del proyecto">
+    </div>
+    <div class="form-group">
+      <label>Financiación: </label>
+      <input type="text" [(ngModel)]="financing" name="financing" class="form-control" placeholder="Financiación del proyecto">
+    </div>
+    <button type="submit" (click)="createProject(myForm.value)" class="btn btn-primary">Crear</button>
+
+  </form>
+</div>

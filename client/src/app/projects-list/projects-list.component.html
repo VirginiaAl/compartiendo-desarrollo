@@ -5,7 +5,7 @@
 
 
 <h1> Projects list </h1>
-<div class="card-columns container">
+<div class="col-xs-3 col-sm-9">
   <div *ngFor="let project of projects" class="card">
 
       <h4 class="card-title">{{ project.association }}</h4>
@@ -13,7 +13,8 @@
       <p class="card-text">{{ project.description }}</p>
       <h1 class="card-text">{{ project.financing }}</h1>
 
-    <button type="button" class="btn btn-lg btn-pill btn-success" [routerLink]="['/project', project._id]">Go to project</button>
+
+    <button id="go" type="button" class="btn btn-lg btn-pill btn-success" [routerLink]="['/project', project._id]">Go to project</button>
   </div>
 
 </div>

@@ -1,11 +1,18 @@
-<p>
-  chat works!
-</p>
 
+<div class="container login">
+  <div class="col-xs-1 col-sm-9">
+    <h2>Welcome {{auth.user.username}}</h2>
+    <form>
+      <div class="form-group">
+        <label for="favourite">My favourites projects</label>
+        <input id="favourite" class="form-control"  type="text" [(ngModel)]="name" name="username" placeholder="My favourites projects">
+      </div>
+    </form>
+  </div>
+</div>
 
-<div *ngIf="auth.user">
-  <h2>Welcome {{auth.user.username}}</h2>
-  <a href="#" (click)="logout()">Logout {{auth.user.username}}</a>
+<div>
+  <button type="submit" (click)="logout()" class="btn btn-primary">Logout</button>
 </div>
 
 <!-- <ul>

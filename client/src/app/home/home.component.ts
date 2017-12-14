@@ -12,27 +12,29 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  projects:Array<any> = [];
+  projects: Array<any> = [];
 
   constructor(private auth: AuthService,
-    public projectsService:ProjectsService,
+    public projectsService: ProjectsService,
     private route: Router,
     private router: ActivatedRoute) { }
 
   ngOnInit() {
     this.projectsService.getProjectList()
-    .map( list => this.projects = list)
+      .map(list => this.projects = list)
+      .subscribe()
+  }
+
+  signup(username, password, email) {
+    this.auth.signup(username, password, email)
+    .map(() => this.route.navigate(['/user']))
     .subscribe()
   }
 
-  signup(username, password){
-  this.auth.signup(username, password).subscribe();
-  this.route.navigate(['/user']);
-  }
-
-  login(username, password){
-    this.auth.login(username, password).subscribe();
-    this.route.navigate(['/user']);
+  login(username, password) {
+    this.auth.login(username, password)
+    .map(() => this.route.navigate(['/user']))
+    .subscribe()
   }
 
 

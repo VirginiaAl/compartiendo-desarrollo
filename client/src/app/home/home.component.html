@@ -27,8 +27,11 @@
 
 
 
-<h1> COMPARTIENDO DESARROLLO </h1>
 
+<div class="img">
+  <h1> COMPARTIENDO DESARROLLO </h1>
+  <img src="https://cdn.shopify.com/s/files/1/0716/2365/products/Womens_logo_shirt_large.png?v=1475536562" alt="code">
+</div>
 <!-- <div *ngIf="!auth.user">
   <form>
     <label> Username </label>
@@ -46,33 +49,37 @@
 
 <!-- formulario login/signup -->
 
-<div class="container" *ngIf="!auth.user">
+<div class="container">
   <h2> Login or signup </h2>
-  <form>
+  <form  #myForm="ngForm">
     <div class="form-group">
-      <label for="exampleInputEmail1">Username</label>
+      <label>Username</label>
       <input type="text" [(ngModel)]="username" name="username" class="form-control" placeholder="Username">
       <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" [(ngModel)]="password" name="password" class="form-control" placeholder="Password">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
+      <label>Email address</label>
       <input type="email" [(ngModel)]="email" name="email" class="form-control" placeholder="Enter email">
     </div>
-    <button type="submit" (click)="login(username,password)" class="btn btn-primary">Login</button>
-    <button type="submit" (click)="signup()" class="btn btn-primary">Login</button>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" [(ngModel)]="password" name="password" class="form-control" placeholder="Password">
+    </div>
+    <button type="submit" (click)="login(myForm.value.username, myForm.value.password )" class="btn btn-primary">Login</button>
+    <button type="submit" (click)="signup(myForm.value.username, myForm.value.password, myForm.value.email )" class="btn btn-primary">SignUp</button>
 
   </form>
 </div>
 
 <div class="mapa">
   <h2> Map </h2>
-    <agm-map [latitude]="1.684034" [longitude]="23.023188" [zoom]="4">
+  <agm-map [latitude]="1.684034" [longitude]="23.023188" [zoom]="4">
     <agm-marker *ngFor="let project of projects" [latitude]="project.lat" [longitude]="project.lng">
-      <agm-info-window>{{project.title}}</agm-info-window>
+      <agm-info-window [maxWidth]="100"> content:' [routerLink]="/proyect.title/', + project._id + '">' + {{project.title}}
+      </agm-info-window>
     </agm-marker>
   </agm-map>
 </div>
+
+
+content: '<a href="/businesses/' + business.id + '">' + business.business_name + '</a><br/>' + 'Phone: ' + business.phone

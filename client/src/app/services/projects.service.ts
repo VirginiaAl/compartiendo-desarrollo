@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import {Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 
 
 
 @Injectable()
 export class ProjectsService {
-  options:object = {
-    withCredentials:true
+  options: object = {
+    withCredentials: true
   }
 
 
@@ -28,10 +28,15 @@ export class ProjectsService {
   findByCategory(category): Observable<any> {
     return this.http.get(`${this.BASE_URL}/project/cat/${category}`, this.options)
       .map((res) => res.json());
-}
+  }
 
   editProject(projects): Observable<any> {
     return this.http.put(`${this.BASE_URL}/project/${projects.id}`, projects, this.options)
+      .map((res) => res.json());
+  }
+
+  createProject(project): Observable<any> {
+    return this.http.post(`${this.BASE_URL}/project`, project, this.options)
       .map((res) => res.json());
   }
 
