@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'user', component: UserComponent },
   { path: 'project/new', component: NewProjectComponent },
   { path: 'project/edit/:id', component: EditProjectComponent },
-  { path: 'project/:id', component: ProjectComponent },
+  { path: 'project/detail/:id', component: ProjectComponent },
   { path: 'projects', component: ProjectsListComponent },
   { path: 'projects/cat/:category', component: ProjectsListComponent },
   { path: '**', redirectTo: 'home' }

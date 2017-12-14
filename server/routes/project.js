@@ -47,9 +47,8 @@ router.get('/', (req, res, next) => {
 
 
 //update
-router.post('/:id', (req, res, next) => {
-  const productId = req.params.id;
-
+router.put('/:id', (req, res, next) => {
+  const projectId = req.params.id;
 
   const updates = {
     association: req.body.association,
@@ -63,7 +62,7 @@ router.post('/:id', (req, res, next) => {
   };
 
   Project.findByIdAndUpdate(projectId, updates, {new: true})
-    .then(projects => res.status(200).json(projects))
+    .then(project => res.status(200).json(project))
     .catch(err => res.status(500).json(err))
 
 });

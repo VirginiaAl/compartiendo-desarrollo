@@ -24,7 +24,6 @@ projects:Array<any> = [];
     // });
 
     this.router.params.subscribe(params => {
-      console.log('PARAMS' + params['category'])
       if(params['category'] != undefined){
       this.projectsService.findByCategory(params['category'])
         .map(projects => this.projects = projects)

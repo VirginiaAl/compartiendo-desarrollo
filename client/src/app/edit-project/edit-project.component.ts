@@ -23,8 +23,9 @@ export class EditProjectComponent implements OnInit {
     })
   }
   editProject(){
+    console.log(this.project)
     this.projectsService.editProject(this.project)
-    .map(p => this.route.navigate(['/project', p._id]))
+    .map(p => this.route.navigate(['/project/detail', p._id]))
     .subscribe()
   }
 

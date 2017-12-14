@@ -31,7 +31,7 @@ export class ProjectsService {
   }
 
   editProject(projects): Observable<any> {
-    return this.http.put(`${this.BASE_URL}/project/${projects.id}`, projects, this.options)
+    return this.http.put(`${this.BASE_URL}/project/${projects._id}`, projects, this.options)
       .map((res) => res.json());
   }
 
