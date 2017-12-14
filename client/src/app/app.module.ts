@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'user', component: UserComponent },
   { path: 'project/new', component: NewProjectComponent },
-  { path: 'project/edit', component: EditProjectComponent },
+  { path: 'project/edit/:id', component: EditProjectComponent },
   { path: 'project/:id', component: ProjectComponent },
   { path: 'projects', component: ProjectsListComponent },
   { path: 'projects/cat/:category', component: ProjectsListComponent },

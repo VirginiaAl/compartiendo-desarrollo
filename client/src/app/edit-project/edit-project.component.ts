@@ -12,21 +12,22 @@ export class EditProjectComponent implements OnInit {
   project;
 
   constructor(public projectsService: ProjectsService,
-  private route: Router,
-  private router: ActivatedRoute) { }
+    public route: Router,
+    private router: ActivatedRoute) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
+    this.router.params.subscribe(params => {
       this.projectsService.getProjectByID(params['id'])
         .map(project => this.project = project)
         .subscribe()
-    }
+    })
   }
-    editProject(projects){
-      this.projectsService.editProject(projects)
-      .map(p => this.route.navigate(['/project', p._id]))
-      .subscribe()
-    }
+  editProject(){
+    this.projectsService.editProject(this.project)
+    .map(p => this.route.navigate(['/project', p._id]))
+    .subscribe()
+  }
+
 
 
 

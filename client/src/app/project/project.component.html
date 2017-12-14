@@ -16,7 +16,7 @@
     <img [src]="project.imgURL" alt="img">
 </div>
 
-    <button class="btn btn-secondary" type="button" (click)="editProject(project._id)">edit</button>
+    <button class="btn btn-secondary" type="button" [routerLink]="['/project/edit', project?._id]">edit</button>
     <button class="btn btn-secondary" type="button" (click)="deleteProject(project._id)">delete</button>
 
 
