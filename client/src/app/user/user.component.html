@@ -1,8 +1,20 @@
 
-<div class="container login">
+<div id="user" class="container login">
   <div class="col-xs-1 col-sm-9">
     <h2>Welcome {{auth.user.username}}</h2>
     <form>
+      <div class="form-group">
+        <label for="favourite">Name</label>
+        <input id="favourite" class="form-control"  type="text" [(ngModel)]="name" name="username" placeholder="Name">
+      </div>
+      <div class="form-group">
+        <label for="favourite">City</label>
+        <input id="favourite" class="form-control"  type="text" [(ngModel)]="name" name="username" placeholder="City">
+      </div>
+      <div class="form-group">
+        <label for="favourite">Country</label>
+        <input id="favourite" class="form-control"  type="text" [(ngModel)]="name" name="username" placeholder="Country">
+      </div>
       <div class="form-group">
         <label for="favourite">My favourites projects</label>
         <input id="favourite" class="form-control"  type="text" [(ngModel)]="name" name="username" placeholder="My favourites projects">
@@ -11,12 +23,25 @@
   </div>
 </div>
 
+
+<div id="chat"class="form-group">
+  <label for="favourite">Comparte con otros usuarios</label>
+  <div class="col-lg-6">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Chat" aria-label="Search for...">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button">sendMessage!</button>
+      </span>
+    </div>
+  </div>
+</div>
+
 <div>
   <button type="submit" (click)="logout()" class="btn btn-primary">Logout</button>
 </div>
 
-<!-- <ul>
-  <li *ngFor="let m of chat.messages"><b>{{m.username}}</b>: {{m.message}}</li>
+
+  <!-- <li *ngFor="let m of chat.messages"><b>{{m.username}}</b>: {{m.message}}</li>
 </ul>
 <input type="text" [(ngModel)]="m">
-<button (click)="chat.sendMessage(m); m=''"> Send Message </button> -->
+<button (click)="chat.sendMessage(m); m=''"> Send Message </button>  -->

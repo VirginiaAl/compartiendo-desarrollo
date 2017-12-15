@@ -1,0 +1,26 @@
+#user {
+  font-family: 'Courgette', cursive;
+  background: #A6E4E7;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+button {
+  background: #EBCBAE;
+
+
+}
+.form-control {
+  display: inline-block;
+}
+#but {
+
+}
+
+#chat {
+  margin: 0 auto;
+  width: 80%;
+  font-family: 'Courgette', cursive;
+
+
+}

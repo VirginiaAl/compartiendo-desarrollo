@@ -1,5 +1,25 @@
+button {
+
+  background: #EBCBAE;
+}
+
+
+#go {
+  background: #8F8787;
+}
+
 img {
   width: 60%;
-
+  height: 400px;
   padding: 30px 60px;
+}
+
+#list {
+  font-family: 'Courgette', cursive;
+  background: #A6E4E7;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: 'Courgette', cursive;
 }

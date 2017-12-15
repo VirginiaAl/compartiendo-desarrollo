@@ -3,6 +3,7 @@ const Project = require('../models/Project');
 require('dotenv').load();
 
 const dbName = 'code';
+const mLAB = "mongodb://admin:admin@ds141766.mlab.com:41766/compartiendo-desarrollo";
 mongoose.connect(`mongodb://localhost/${dbName}`);
 
 const projects = [{

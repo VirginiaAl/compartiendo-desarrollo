@@ -1,17 +1,17 @@
 <div>
-  <button class="btn btn-secondary" type="button" (click)="goToHome()">Home</button>
+  <button id="home"class="btn btn-secondary" type="button" (click)="goToHome()">Home</button>
 </div>
 
 
 
 <h1> Projects list </h1>
-<div class="col-xs-3 col-sm-9">
+<div id="list" class="col-xs-3 col-sm-9">
   <div *ngFor="let project of projects" class="card">
 
       <h4 class="card-title">{{ project.association }}</h4>
       <p class="card-text">{{ project.title }}</p>
       <p class="card-text">{{ project.description }}</p>
-      <h1 class="card-text">{{ project.financing }}</h1>
+      <h6 class="card-text">{{ project.financing }}</h6>
 
 
     <button id="go" type="button" class="btn btn-lg btn-pill btn-success" [routerLink]="['/project/detail', project._id]">Go to project</button>

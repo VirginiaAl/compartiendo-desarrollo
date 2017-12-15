@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 const auth = require('./routes/auth');
 const index = require('./routes/index');
 const session = require('express-session');
-//const apiFor = require('./routes/api');
+
 const MongoStore = require('connect-mongo')(session);
 const cors = require('cors');
 
@@ -61,8 +61,6 @@ require('./passport')(app);
 app.use('/auth', auth);
 
 app.use('/', index);
-// app.use('/api/user', apiFor(require('./models/User')));
-// app.use('/api/project', apiFor(require('./models/Project')));
 
  app.use('/user', user);
  app.use('/project', project);

@@ -1,3 +1,18 @@
 #go {
   width: 20%;
+  background: #EBCBAE;
+}
+
+h1 {
+  font-family: 'Courgette', cursive;
+}
+
+#list {
+  font-family: 'Courgette', cursive;
+  background: #A6E4E7;
+  margin: 0 auto;
+}
+
+#home {
+  background: #8F8787;
 }

@@ -1,37 +1,40 @@
-.navbar{
+.navbar {
   position: fixed;
   z-index: 1;
   width: 100%;
-  background-color: #8F8787;
+  background-color: #EBCBAE;
 }
-.container{
+
+.container {
   width: 50%;
   padding: 2%;
   font-family: 'Courgette', cursive;
   background-color: #EBCBAE;
 }
-h1{
+
+h1 {
   padding-top: 80px;
   font-family: 'Courgette', cursive;
-display: inline-block;
+  display: inline-block;
 }
+
 /*map*/
-.mapa{
+
+.mapa {
   width: 80%;
   margin: 50px auto;
-
 }
+
 agm-map {
   height: 800px;
-
 }
+
 img {
   height: 75px;
-  width: 10%;
-
+  width: 15%;
 }
 
-.img{
+.img {
   width: 45%;
   margin: 0 auto;
 }

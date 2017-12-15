@@ -1,11 +1,7 @@
-<!-- <button type="button" class="btn btn-lg btn-pill btn-success" [routerLink]="['/projects/cat', 'cooperation']">Cooperation Projects</button>
-<button type="button" class="btn btn-lg btn-pill btn-success" [routerLink]="['/projects/cat', 'social-action']">Social Action Projects</button>
-<button type="button" class="btn btn-lg btn-pill btn-success" [routerLink]="['/projects/cat', 'education']">Education Projects</button> -->
 <!-- nav bar -->
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -24,34 +20,17 @@
   </div>
 </nav>
 
-
-
-
-
 <div class="img">
   <h1> COMPARTIENDO DESARROLLO </h1>
-  <img src="https://cdn.shopify.com/s/files/1/0716/2365/products/Womens_logo_shirt_large.png?v=1475536562" alt="code">
+  <img src="../../assets/images/logo.png" alt="code">
 </div>
-<!-- <div *ngIf="!auth.user">
-  <form>
-    <label> Username </label>
-    <input type="text" [(ngModel)]="username" name="username"/>
-    <br>
-    <label> Password </label>
-    <input type="password" [(ngModel)]="password" name="password"/>
 
-    <button (click)="login(username,password)"> login </button>
-    <button (click)="signup()"> signup </button>
-  </form>
-  <p class="error"> {{ error }} </p>
-</div>
- -->
 
 <!-- formulario login/signup -->
 
 <div class="container">
   <h2> Login or signup </h2>
-  <form  #myForm="ngForm">
+  <form #myForm="ngForm">
     <div class="form-group">
       <label>Username</label>
       <input type="text" [(ngModel)]="username" name="username" class="form-control" placeholder="Username">
@@ -75,11 +54,7 @@
   <h2> Map </h2>
   <agm-map [latitude]="1.684034" [longitude]="23.023188" [zoom]="4">
     <agm-marker *ngFor="let project of projects" [latitude]="project.lat" [longitude]="project.lng">
-      <agm-info-window [maxWidth]="100"> content:' [routerLink]="/proyect.title/', + project._id + '">' + {{project.title}}
-      </agm-info-window>
+      <agm-info-window [maxWidth]="100">Association: {{project.association}}, Title: {{project.title}}</agm-info-window>
     </agm-marker>
   </agm-map>
 </div>
-
-
-content: '<a href="/businesses/' + business.id + '">' + business.business_name + '</a><br/>' + 'Phone: ' + business.phone
